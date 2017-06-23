@@ -19,6 +19,19 @@ common: &default_settings
   # To disable the agent regardless of other settings, uncomment the following:
   # agent_enabled: false
 
+  # Sets the name of a file to log agent messages to. Useful for
+  # debugging any issues with the agent. This is not set by
+  # default as it is not known in advance what user your web
+  # application processes will run as and where they have
+  # permission to write to. Whatever you set this to you must
+  # ensure that the permissions for the containing directory and
+  # the file itself are correct, and that the user that your web
+  # application runs as can write to the file. If not able to
+  # write out a log file, it is also possible to say "stderr" and
+  # output to standard error output. This would normally result in
+  # output appearing in your web server log.
+  log_file: /tmp/newrelic-ruby-agent.log
+  
   # Logging level for log/newrelic_agent.log
   log_level: info
 
